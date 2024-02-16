@@ -1,17 +1,16 @@
 // Fetch Data
 const API_KEY="3a9412f497164bd18d0dc3950b80d396";
 const url="https://newsapi.org/v2/everything?q=";
-let go_search= document.getElementById("go_search");
-let inputText=document.getElementById("inputData");
+
 
 
 window.addEventListener("load",()=>fetchNews("India"));
 
 async function fetchNews(query){
-  //const res=await fetch(`${url}${query}&apiKey=${API_KEY}`);
-  const res=await fetch(`https://newsapi.org/v2/everything?q=${query}&apiKey=3a9412f497164bd18d0dc3950b80d396`)
+  const res=await fetch(`${url}${query}&apiKey=${API_KEY}`);
+ 
   const data=await res.json();
-  console.log(data);
+  //console.log(data);
   bindData(data.articles);
 }
 function bindData(articles){
@@ -41,12 +40,17 @@ function fillDataInCard(cardClone,article){
 }
 
 //Search Data
-
+let go_search= document.getElementById("go_search");
+let inputText=document.getElementById("inputData");
 go_search.addEventListener("click", (event)=>{
   event.preventDefault();
   const query = inputText.value;
-  if (!query) return;
-  fetchNews(query);
- })
+  
+  if(query == ""){
+    alert("First Enter Something");
+}else{
+    fetchNews(query);
+}
+});
 
 
