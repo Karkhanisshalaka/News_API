@@ -35,7 +35,7 @@ function fillDataInCard(cardClone,article){
   newsDesc.innerHTML=article.description;
 // open news using url 
   cardClone.firstElementChild.addEventListener("click",()=>{
-    window.open(article.url,"_blank");
+    window.open(article.url,"_self");
   });
 }
 
@@ -45,9 +45,9 @@ let inputText=document.getElementById("inputData");
 go_search.addEventListener("click", (event)=>{
   event.preventDefault();
   const query = inputText.value;
-  
   if(query == ""){
     alert("First Enter Something");
+    //console.log("empty");
 }else{
     fetchNews(query);
 }

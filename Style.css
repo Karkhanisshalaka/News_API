@@ -59,9 +59,11 @@ form{
     justify-content: center;
     align-items: center;
     margin-top: 5vh;
+    
 }
 form{
     display: flex;
+    
 }
 #srch{
 display: flex;
@@ -71,8 +73,7 @@ margin: 20px;
 
 }
 #inputData{
-  
-    width: 15rem;
+  width: 15rem;
     height: 4rem;
     align-items: center;
     display: inline-block;
@@ -82,6 +83,7 @@ margin: 20px;
     font-size: 1.2rem;
     outline: none;
 }
+
 #go_search{
     width: 4rem;
     height: 4rem;
@@ -187,5 +189,9 @@ margin: 20px;
     }
     .container{
         flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
     }
 }
